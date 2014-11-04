@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: dBgSlideshow
-Plugin URI: http://www.dejwid.pl/projects/dbgslideshow
+Plugin URI: http://github.com/dejwid/bg-slideshow
 Description: Display images slideshow as website background
 Version: 1.0
 Author: Dawid Paszko
-Author URI: http://www.dejwid.pl
+Author URI: http://github.com/dejwid
 License: GPL2
 */
 
@@ -24,7 +24,7 @@ function dbgslideshow_init(){
     $x = '<div id="slideshow">';
         foreach($slideshowImgs as $k=>$img){
         	$i=$k+1;
-            $x.='<div class="slideshow slideshow-slide" id="slide'.$i.'" style="background-image: url(\''.$img.'\');background-position: right top;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\''.$img.'\',sizingMethod=\'scale\');">';
+            $x.='<div class="slideshow slideshow-slide" id="slide'.$i.'" style="background-image: url(\''.$img.'\');background-position: center center;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\''.$img.'\',sizingMethod=\'scale\');">';
                 //$x.='<img src="'.$img.'" />';
             $x.='</div>';
         }
@@ -40,6 +40,10 @@ function dbgslideshow_init(){
         slides: '.slideshow-slide'
     });
     </script>
+    <style>
+        #dbgslideshow,.slideshow{top:0;bottom:0;left:0;right:0;position:fixed;}
+        
+    </style>
     <?php
     }
 }
@@ -143,6 +147,7 @@ function my_custom_menu_page(){
 	}
 	</script>
 	<style type="text/css">
+        /* dbgslideshow css */
 	.imgRecords{
 		clear: both;
 	}
