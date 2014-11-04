@@ -42,7 +42,7 @@ function dbgslideshow_init(){
     </script>
     <style>
         #dbgslideshow,.slideshow{top:0;bottom:0;left:0;right:0;position:fixed;}
-        
+        .slideshow-slide{background-size:cover;}
     </style>
     <?php
     }
